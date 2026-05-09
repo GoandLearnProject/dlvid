@@ -2,7 +2,7 @@ import streamlit as st
 import yt_dlp
 import os
 
-st.set_page_config(page_title="Trình Tải Video Public", page_icon="📥", layout="centered")
+st.set_page_config(page_title="Trình Tải Video của Hoàng", page_icon="📥", layout="centered")
 
 # --- HÀM NHẬN DIỆN NỀN TẢNG ---
 def nhan_dien_nen_tang(url):
@@ -13,7 +13,7 @@ def nhan_dien_nen_tang(url):
     return "Nền tảng khác"
 
 # --- GIAO DIỆN CHÍNH ---
-st.title("📥 Trình Tải Video Đa Nền Tảng")
+st.title("📥 Trình Tải Video của Hoàng")
 st.markdown("Hỗ trợ tải: **YouTube, TikTok, Facebook, Instagram**")
 
 url = st.text_input("Dán link video vào đây:")
