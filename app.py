@@ -29,7 +29,7 @@ if url:
         
         with st.spinner("Đang phân tích link và lấy các độ phân giải..."):
             try:
-                ydl_opts_info = {'quiet': True, 'no_warnings': True}
+                ydl_opts_info = {'quiet': True, 'no_warnings': True, 'extractor_args': {'youtube': ['player_client=android,ios,web']}}
                 with yt_dlp.YoutubeDL(ydl_opts_info) as ydl:
                     st.session_state.info = ydl.extract_info(url, download=False)
             except Exception as e:
@@ -65,7 +65,9 @@ if url:
                     'format': f'bestvideo[height<={h}]+bestaudio/best[height<={h}]',
                     'outtmpl': out_filename,
                     'merge_output_format': 'mp4',
-                    'quiet': False
+                    'quiet': False,
+                    'extractor_args': {'youtube': ['player_client=android,ios,web']},
+                    'nocheckcertificate': True
                 }
                 
                 with st.spinner(f"Đang tải và ghép nối video ở chất lượng {selected_res}. Vui lòng không đóng trang..."):
