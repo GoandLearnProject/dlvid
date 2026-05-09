@@ -5,7 +5,7 @@ import re
 import shutil
 
 # Cấu hình bảo mật đơn giản
-PASSWORD = "thay_doi_mat_khau_tai_day"
+PASSWORD = "admin"
 
 def check_password():
     if "authenticated" not in st.session_state:
